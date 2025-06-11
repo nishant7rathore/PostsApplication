@@ -1,7 +1,5 @@
 package com.example.colabinterview.dto;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import java.util.ArrayList;
 
 public class PostsWCommentsCountDTO {

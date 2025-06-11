@@ -1,13 +1,14 @@
 package com.example.colabinterview.service;
 
+import com.example.colabinterview.dto.CommentDTO;
 import com.example.colabinterview.dto.PostsWCommentsCountDTO;
-import com.example.colabinterview.model.Post;
 import com.example.colabinterview.repository.PostRepository;
 import com.example.colabinterview.repository.PostRepositoryCustom;
-import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class PostService {
@@ -20,9 +21,14 @@ public class PostService {
     private PostRepositoryCustom postRepositoryCustom;
 
 
-    public Iterable<PostsWCommentsCountDTO> findPostsWithCommentCounts(){
-        Iterable<PostsWCommentsCountDTO> posts = postRepositoryCustom.findPostsWithCommentCounts();
-        return posts;
+    public List<PostsWCommentsCountDTO> findPostsWithCommentCounts(){
+        return postRepositoryCustom.findPostsWithCommentCounts();
     }
+
+    public List<CommentDTO> findCommentsForPost(int postId, int page, int pageSize){
+        List<CommentDTO> comments = postRepositoryCustom.findCommentsForPost(postId,page,pageSize);
+        return comments;
+    }
+
 
 }
