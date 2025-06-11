@@ -57,7 +57,7 @@ public class PostRepositoryCustomImpl implements PostRepositoryCustom {
         List<Comment> comments = queryFactory.selectFrom(comment)
                 .where(comment.post.id.eq(postId))
                 .limit(pageSize)
-                .offset(page - 1).fetch();
+                .offset((long) (page - 1) *pageSize).fetch();
         return jsonComments(comments);
 }
 
