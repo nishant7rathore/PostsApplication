@@ -1,23 +1,53 @@
 package com.example.colabinterview.repository.impl;
 
+import com.example.colabinterview.dto.PostsWCommentsCountDTO;
+import com.example.colabinterview.model.Comment;
 import com.example.colabinterview.model.Post;
+import com.example.colabinterview.model.QComment;
+import com.example.colabinterview.model.QPost;
 import com.example.colabinterview.repository.PostRepository;
 import com.example.colabinterview.repository.PostRepositoryCustom;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.querydsl.core.Tuple;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
+@Component
 public class PostRepositoryCustomImpl implements PostRepositoryCustom {
 
     @PersistenceContext
     private EntityManager entityManager;
 
-    public String findPostsWithCoommentCounts() {
+    public List<PostsWCommentsCountDTO> findPostsWithCommentCounts() {
         JPAQueryFactory queryFactory = new JPAQueryFactory(entityManager);
         QPost post = QPost.post;
-        return queryFactory.selectFrom(post).
+        QComment comment = QComment.comment;
+        List<Post> posts = queryFactory.selectFrom(post).stream().toList();
+        List<Tuple> commentCounts = queryFactory.select(comment.post.id, comment.count())
+                                                .from(comment)
+                                                .groupBy(comment.post.id)
+                                                .fetch();
+        Map<Integer,Long> commentDict = new HashMap<>();
+        commentCounts.forEach(tuple -> commentDict.put(tuple.get(0,Integer.class),tuple.get(1,Long.class)));
+        List<PostsWCommentsCountDTO> jsonObjects = jsonPostsWithCommentsCount(commentDict,posts);
+        return jsonObjects;
+    }
+
+    private List<PostsWCommentsCountDTO> jsonPostsWithCommentsCount(Map<Integer, Long> commentDict, List<Post> posts) {
+        List<PostsWCommentsCountDTO> employees = posts.stream().map(post -> new PostsWCommentsCountDTO(post.getId(),
+                post.getTitle(),
+                post.getContent(),
+                post.getAuthor().getUserName(),
+                post.getCreatedAt().toString(),
+                commentDict.getOrDefault(post.getId(),0L).intValue(),
+                new ArrayList<String>())).collect(Collectors.toList());
+        return employees;
     }
 }

@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 public class User {
 
     @Id
+    @Column(name = "id")
     private Integer id;
 
     @Column(length = 80, unique = true, nullable = false)

@@ -15,18 +15,18 @@ public class Comment {
     private String content;
 
     @ManyToOne
-    @JoinColumn(name = "user_id",nullable = false)
+    @JoinColumn(name = "user_id", insertable=false, updatable=false, nullable = false)
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "post_id", nullable = false)
     private Post post;
 
-    @Column(nullable = false)
+    @Column(name="created_at", nullable = false)
     private LocalDateTime createdAt;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id",referencedColumnName = "User.id")
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
     private User author;
 
     public Integer getId() {

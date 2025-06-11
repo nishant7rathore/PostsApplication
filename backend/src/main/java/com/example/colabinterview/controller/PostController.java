@@ -1,5 +1,6 @@
 package com.example.colabinterview.controller;
 
+import com.example.colabinterview.dto.PostsWCommentsCountDTO;
 import com.example.colabinterview.model.Post;
 import com.example.colabinterview.service.PostService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -22,8 +23,7 @@ public class PostController {
     @GetMapping("/posts")
     public String findAll() throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        List<Post> posts = StreamSupport.stream(postService.findALl().spliterator(), false)
-                .toList();
+        List<PostsWCommentsCountDTO> posts = StreamSupport.stream(postService.findPostsWithCommentCounts().spliterator(), false).toList();
         return mapper.writeValueAsString(posts);
     }
 

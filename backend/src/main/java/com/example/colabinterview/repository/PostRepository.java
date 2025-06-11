@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PostRepository extends JpaRepository<Post, Integer>, QuerydslPredicateExecutor<Post>, PostRepositoryCustom {
+public interface PostRepository extends JpaRepository<Post, Integer>, QuerydslPredicateExecutor<Post> {
 }

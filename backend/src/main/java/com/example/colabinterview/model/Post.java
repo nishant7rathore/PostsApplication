@@ -9,12 +9,14 @@ import java.util.Collection;
 public class Post {
 
     @Id
+
     private Integer id;
 
     @Column(length = 100, nullable = false)
     private String title;
 
     @JoinColumn(name = "user_id", nullable = false)
+    @Column(name = "user_id", insertable=false, updatable=false)
     private Integer userId;
 
     @Column(nullable = false)
@@ -23,7 +25,7 @@ public class Post {
     @OneToMany(mappedBy = "post", fetch=FetchType.LAZY)
     private Collection<Comment> comments;
 
-    @Column(nullable = false)
+    @Column(name= "created_at", nullable = false)
     private LocalDateTime createdAt;
 
     @OneToOne(fetch = FetchType.LAZY)
