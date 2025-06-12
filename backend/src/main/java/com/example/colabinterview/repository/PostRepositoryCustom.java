@@ -11,6 +11,6 @@ import java.util.Map;
 public interface PostRepositoryCustom {
 
     public List<Post> findPosts();
-    public Map<Integer,Long> findCommentsByPost();
+    public Map<Integer,Long> findCommentsCountByPost();
     public List<Comment> findCommentsForPost(int postId, int page, int pageSize);
 }

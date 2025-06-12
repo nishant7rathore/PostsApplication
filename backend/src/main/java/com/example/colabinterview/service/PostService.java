@@ -29,7 +29,7 @@ public class PostService {
 
     public List<PostsWCommentsCountDTO> findPostsWithCommentCounts(){
         List<Post> posts = postRepositoryCustom.findPosts();
-        Map<Integer, Long> comments = postRepositoryCustom.findCommentsByPost();
+        Map<Integer, Long> comments = postRepositoryCustom.findCommentsCountByPost();
         return postsMapper.postsDTO(comments,posts);
     }
 

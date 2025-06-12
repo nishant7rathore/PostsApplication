@@ -1,0 +1,13 @@
+Subject: FW: File upload issues
+
+Hi PLM Tech,
+
+We have a customer who's having trouble uploading a number of files from their Windchill PLM system to CoLab's cloud app using the Windchill Integration that makes use of CoLab's Rest APIs. What could be the potential reasons and the possible next steps?
+
+> Hi CoLab, 
+
+> One of our teams is having trouble uploading assemblies in some cases. We use the cluster setup of Windchill installation.
+
+> We have a log file attached that should have captured one of the failed uploads.
+
+> Thanks!

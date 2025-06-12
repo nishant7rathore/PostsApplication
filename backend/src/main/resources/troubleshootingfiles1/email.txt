@@ -1,0 +1,15 @@
+Subject: FW: QA Issue on Latest Release
+
+Hi PLM tech,
+
+Can you investigate the issue QA is describing to see if we should escalate to the dev team?
+
+If I recall correctly, the latest changes were cosmetic only: they were updating some of our plugin's pop-ups.
+
+> Hi! 
+
+> I was testing out the latest release of our plugin before we start rolling out to customers, and while most things check out, I'm not able to upload one particular assembly, 'TestAssembly_MissingFiles': nothing appears to happen, I don't even see the upload confirmation pop-up. 
+
+> I have a log file from the PLM software attached that covers the time I was testing.
+
+> Thanks!

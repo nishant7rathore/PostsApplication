@@ -26,13 +26,13 @@ public class PostRepositoryCustomImpl implements PostRepositoryCustom {
         return queryFactory.selectFrom(post).stream().toList();
     }
 
-    public Map<Integer,Long> findCommentsByPost(){
+    public Map<Integer,Long> findCommentsCountByPost(){
         JPAQueryFactory queryFactory = new JPAQueryFactory(entityManager);
         QComment comment = QComment.comment;
         List<Tuple> commentCounts = queryFactory.select(comment.post.id, comment.count())
-                .from(comment)
-                .groupBy(comment.post.id)
-                .fetch();
+                                                .from(comment)
+                                                .groupBy(comment.post.id)
+                                                .fetch();
         Map<Integer,Long> commentDict = new HashMap<>();
         commentCounts.forEach(tuple -> commentDict.put(tuple.get(0,Integer.class),tuple.get(1,Long.class)));
         return commentDict;
@@ -44,8 +44,8 @@ public class PostRepositoryCustomImpl implements PostRepositoryCustom {
         QPost post = QPost.post;
         QComment comment = QComment.comment;
         return queryFactory.selectFrom(comment)
-                .where(comment.post.id.eq(postId))
-                .limit(pageSize)
-                .offset((long) (page - 1) *pageSize).fetch();
+                           .where(comment.post.id.eq(postId))
+                           .limit(pageSize)
+                           .offset((long) (page - 1) *pageSize).fetch();
     }
 }
