@@ -69,9 +69,7 @@ public class Comment {
         this.createdAt = createdAt;
     }
 
-    public User getAuthor() {
-        return author;
-    }
+    public User getAuthor() { return author; }
 
     public void setAuthor(User author) {
         this.author = author;
