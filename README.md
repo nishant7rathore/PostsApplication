@@ -85,7 +85,7 @@ A full-stack web application built with Spring Boot (Jakarta EE, Spring Data JPA
 
 ## License
 
-This project is open source and available under the [Your License Here].
+This project is open source and available under the MIT license.
 
 ---
 
