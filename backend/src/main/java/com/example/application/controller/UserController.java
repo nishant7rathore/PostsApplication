@@ -1,4 +1,4 @@
-package com.example.colabinterview.controller;
+package com.example.application.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

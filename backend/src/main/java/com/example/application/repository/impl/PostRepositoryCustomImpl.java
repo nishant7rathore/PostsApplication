@@ -1,10 +1,10 @@
-package com.example.colabinterview.repository.impl;
+package com.example.application.repository.impl;
 
-import com.example.colabinterview.model.Comment;
-import com.example.colabinterview.model.Post;
-import com.example.colabinterview.model.QComment;
-import com.example.colabinterview.model.QPost;
-import com.example.colabinterview.repository.PostRepositoryCustom;
+import com.example.application.model.Comment;
+import com.example.application.model.Post;
+import com.example.application.model.QComment;
+import com.example.application.model.QPost;
+import com.example.application.repository.PostRepositoryCustom;
 import com.querydsl.core.Tuple;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;

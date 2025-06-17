@@ -1,4 +1,4 @@
-package com.example.colabinterview;
+package com.example.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @Configuration
-@EnableJpaRepositories("com.example.colabinterview.repository")
-@EntityScan("com.example.colabinterview.model")
+@EnableJpaRepositories("com.example.application.repository")
+@EntityScan("com.example.application.model")
 public class PostsApplication {
 
     public static void main(String[] args) {

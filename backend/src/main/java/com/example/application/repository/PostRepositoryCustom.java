@@ -1,7 +1,7 @@
-package com.example.colabinterview.repository;
+package com.example.application.repository;
 
-import com.example.colabinterview.model.Comment;
-import com.example.colabinterview.model.Post;
+import com.example.application.model.Comment;
+import com.example.application.model.Post;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

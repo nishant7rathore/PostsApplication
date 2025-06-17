@@ -1,8 +1,8 @@
-package com.example.colabinterview.mapper;
-import com.example.colabinterview.dto.CommentDTO;
-import com.example.colabinterview.dto.PostsWCommentsCountDTO;
-import com.example.colabinterview.model.Comment;
-import com.example.colabinterview.model.Post;
+package com.example.application.mapper;
+import com.example.application.dto.CommentDTO;
+import com.example.application.dto.PostsWCommentsCountDTO;
+import com.example.application.model.Comment;
+import com.example.application.model.Post;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

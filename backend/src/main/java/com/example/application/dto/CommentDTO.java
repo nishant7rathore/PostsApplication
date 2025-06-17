@@ -1,6 +1,6 @@
-package com.example.colabinterview.dto;
+package com.example.application.dto;
 
-import com.example.colabinterview.model.User;
+import com.example.application.model.User;
 
 import java.time.LocalDateTime;
 

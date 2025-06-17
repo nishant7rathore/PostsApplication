@@ -1,4 +1,4 @@
-package com.example.colabinterview.model;
+package com.example.application.model;
 
 import jakarta.persistence.*;
 

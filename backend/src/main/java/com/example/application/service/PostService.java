@@ -1,12 +1,12 @@
-package com.example.colabinterview.service;
+package com.example.application.service;
 
-import com.example.colabinterview.dto.CommentDTO;
-import com.example.colabinterview.dto.PostsWCommentsCountDTO;
-import com.example.colabinterview.mapper.PostsMapper;
-import com.example.colabinterview.model.Comment;
-import com.example.colabinterview.model.Post;
-import com.example.colabinterview.repository.PostRepository;
-import com.example.colabinterview.repository.PostRepositoryCustom;
+import com.example.application.dto.CommentDTO;
+import com.example.application.dto.PostsWCommentsCountDTO;
+import com.example.application.mapper.PostsMapper;
+import com.example.application.model.Comment;
+import com.example.application.model.Post;
+import com.example.application.repository.PostRepository;
+import com.example.application.repository.PostRepositoryCustom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

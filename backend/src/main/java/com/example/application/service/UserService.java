@@ -1,4 +1,4 @@
-package com.example.colabinterview.service;
+package com.example.application.service;
 
 import org.springframework.stereotype.Service;
 

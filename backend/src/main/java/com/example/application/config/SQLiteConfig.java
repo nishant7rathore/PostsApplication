@@ -1,4 +1,4 @@
-package com.example.colabinterview.config;
+package com.example.application.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -37,7 +37,7 @@ public class SQLiteConfig {
             DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("com.example.colabinterview.model");
+        em.setPackagesToScan("com.example.application.model");
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Map<String, Object> properties = new HashMap<>();

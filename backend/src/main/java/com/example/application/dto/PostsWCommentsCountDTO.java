@@ -1,4 +1,4 @@
-package com.example.colabinterview.dto;
+package com.example.application.dto;
 
 import java.util.ArrayList;
 
